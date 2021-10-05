@@ -1,0 +1,331 @@
+{
+  "version": "1.0",
+  "exported_at": 1633463004,
+  "name": "Wearsafe API - Admin / Categories",
+  "description": "testing interfaces for categories (CRUD)",
+  "trigger_url": "https://api.runscope.com/radar/8e057a84-db0e-4625-91b5-1d6b52fe5dbb/trigger",
+  "steps": [
+    {
+      "step_type": "request",
+      "skipped": false,
+      "note": "",
+      "body": "",
+      "form": {},
+      "multipart_form": [],
+      "headers": {
+        "Content-Type": [
+          "application/json"
+        ],
+        "Authorization": [
+          "{{categoryToken}}"
+        ]
+      },
+      "auth": {},
+      "method": "POST",
+      "url": "{{URL}}/category?name=hellowearsafe",
+      "fragment": "",
+      "assertions": [
+        {
+          "comparison": "equal_number",
+          "source": "response_status",
+          "value": 200
+        },
+        {
+          "comparison": "is_less_than",
+          "source": "response_time",
+          "value": "{{timeOut}}"
+        }
+      ],
+      "variables": [],
+      "scripts": [],
+      "before_scripts": []
+    },
+    {
+      "step_type": "request",
+      "skipped": false,
+      "note": "",
+      "multipart_form": [],
+      "headers": {
+        "Authorization": [
+          "{{categoryToken}}"
+        ]
+      },
+      "auth": {},
+      "method": "GET",
+      "url": "{{URL}}/category",
+      "fragment": "",
+      "assertions": [
+        {
+          "comparison": "equal_number",
+          "source": "response_status",
+          "value": 200
+        },
+        {
+          "comparison": "is_less_than",
+          "source": "response_time",
+          "value": "{{timeOut}}"
+        }
+      ],
+      "variables": [],
+      "scripts": [],
+      "before_scripts": []
+    },
+    {
+      "step_type": "request",
+      "skipped": false,
+      "note": "",
+      "body": "",
+      "form": {},
+      "multipart_form": [],
+      "headers": {
+        "Content-Type": [
+          "application/json"
+        ],
+        "Authorization": [
+          "{{categoryToken}}"
+        ]
+      },
+      "auth": {},
+      "method": "PUT",
+      "url": "{{URL}}/category?existing=Technohunk&new=javahunkk",
+      "fragment": "",
+      "assertions": [
+        {
+          "comparison": "equal_number",
+          "source": "response_status",
+          "value": 200
+        },
+        {
+          "comparison": "is_less_than",
+          "source": "response_time",
+          "value": "{{timeOut}}"
+        }
+      ],
+      "variables": [],
+      "scripts": [],
+      "before_scripts": []
+    },
+    {
+      "step_type": "request",
+      "skipped": false,
+      "note": "",
+      "multipart_form": [],
+      "headers": {
+        "Authorization": [
+          "{{categoryToken}}"
+        ]
+      },
+      "auth": {},
+      "method": "GET",
+      "url": "{{URL}}/category",
+      "fragment": "",
+      "assertions": [
+        {
+          "comparison": "equal_number",
+          "source": "response_status",
+          "value": 200
+        },
+        {
+          "comparison": "is_less_than",
+          "source": "response_time",
+          "value": "{{timeOut}}"
+        }
+      ],
+      "variables": [],
+      "scripts": [],
+      "before_scripts": []
+    },
+    {
+      "step_type": "request",
+      "skipped": false,
+      "note": "",
+      "body": "{\r\n\t\"emailAddresses\":[\r\n\t\t\"javahunk100@gmail.com\"],\r\n\t\t\t\"phoneNumbersWithCountryCode\":[\r\n\t\t\"918700134973\"],\r\n\t\t\"category\":\"Technohunk\"\r\n}\r\n",
+      "form": {},
+      "multipart_form": [],
+      "headers": {
+        "Content-Type": [
+          "application/json"
+        ],
+        "Authorization": [
+          "{{categoryToken}}"
+        ]
+      },
+      "auth": {},
+      "method": "POST",
+      "url": "{{URL}}/category/user/assign",
+      "fragment": "",
+      "assertions": [
+        {
+          "comparison": "equal_number",
+          "source": "response_status",
+          "value": 200
+        },
+        {
+          "comparison": "is_less_than",
+          "source": "response_time",
+          "value": "{{timeOut}}"
+        }
+      ],
+      "variables": [],
+      "scripts": [],
+      "before_scripts": []
+    },
+    {
+      "step_type": "request",
+      "skipped": false,
+      "note": "",
+      "multipart_form": [],
+      "headers": {
+        "Authorization": [
+          "{{categoryToken}}"
+        ]
+      },
+      "auth": {},
+      "method": "GET",
+      "url": "{{URL}}/category/user?name=Technohunk",
+      "fragment": "",
+      "assertions": [
+        {
+          "comparison": "equal_number",
+          "source": "response_status",
+          "value": 200
+        },
+        {
+          "comparison": "is_a_number",
+          "source": "response_time",
+          "value": null
+        }
+      ],
+      "variables": [],
+      "scripts": [],
+      "before_scripts": []
+    },
+    {
+      "step_type": "request",
+      "skipped": false,
+      "note": "",
+      "body": "{\r\n\t\"emailAddresses\":[\r\n\t\t\"javahunk100@gmail.com\"],\r\n\t\t\t\"phoneNumbersWithCountryCode\":[\r\n\t\t\"918700134973\"],\r\n\t\t\"category\":\"Technohunk\"\r\n}\r\n",
+      "form": {},
+      "multipart_form": [],
+      "headers": {
+        "Content-Type": [
+          "application/json"
+        ],
+        "Authorization": [
+          "{{categoryToken}}"
+        ]
+      },
+      "auth": {},
+      "method": "POST",
+      "url": "{{URL}}/category/user/unassign",
+      "fragment": "",
+      "assertions": [
+        {
+          "comparison": "equal_number",
+          "source": "response_status",
+          "value": 200
+        },
+        {
+          "comparison": "is_less_than",
+          "source": "response_time",
+          "value": "{{timeOut}}"
+        }
+      ],
+      "variables": [],
+      "scripts": [],
+      "before_scripts": []
+    },
+    {
+      "step_type": "request",
+      "skipped": false,
+      "note": "",
+      "multipart_form": [],
+      "headers": {
+        "Authorization": [
+          "{{categoryToken}}"
+        ]
+      },
+      "auth": {},
+      "method": "GET",
+      "url": "{{URL}}/category",
+      "fragment": "",
+      "assertions": [
+        {
+          "comparison": "equal_number",
+          "source": "response_status",
+          "value": 200
+        },
+        {
+          "comparison": "is_less_than",
+          "source": "response_time",
+          "value": "{{timeOut}}"
+        }
+      ],
+      "variables": [],
+      "scripts": [],
+      "before_scripts": []
+    },
+    {
+      "step_type": "request",
+      "skipped": false,
+      "note": "",
+      "multipart_form": [],
+      "headers": {
+        "Authorization": [
+          "{{categoryToken}}"
+        ]
+      },
+      "auth": {},
+      "method": "GET",
+      "url": "{{URL}}/category",
+      "fragment": "",
+      "assertions": [
+        {
+          "comparison": "equal_number",
+          "source": "response_status",
+          "value": 200
+        },
+        {
+          "comparison": "is_less_than",
+          "source": "response_time",
+          "value": "{{timeOut}}"
+        }
+      ],
+      "variables": [],
+      "scripts": [],
+      "before_scripts": []
+    },
+    {
+      "step_type": "request",
+      "skipped": false,
+      "note": "",
+      "body": "",
+      "form": {},
+      "multipart_form": [],
+      "headers": {
+        "Authorization": [
+          "{{categoryToken}}"
+        ]
+      },
+      "auth": {},
+      "method": "DELETE",
+      "url": "{{URL}}/category?name=hellowearsafe",
+      "fragment": "",
+      "assertions": [
+        {
+          "comparison": "equal_number",
+          "source": "response_status",
+          "value": 200
+        },
+        {
+          "comparison": "is_less_than",
+          "source": "response_time",
+          "value": "{{timeOut}}"
+        }
+      ],
+      "variables": [],
+      "scripts": [],
+      "before_scripts": []
+    }
+  ]
+}
